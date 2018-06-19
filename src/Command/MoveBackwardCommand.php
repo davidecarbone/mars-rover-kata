@@ -2,13 +2,13 @@
 
 namespace MarsRover\Command;
 
-use MarsRover\Position;
+use MarsRover\Rover;
 
 class MoveBackwardCommand extends MoveCommand
 {
-    public function __construct(Position $position, $direction)
+    public function __construct(Rover $rover)
     {
-        parent::__construct($position, $direction);
+        parent::__construct($rover);
         $this->movementMode = self::MODE_BACKWARD;
     }
 }

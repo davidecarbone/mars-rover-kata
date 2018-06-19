@@ -7,8 +7,9 @@ use MarsRover\Command\MoveForwardCommand;
 use MarsRover\Command\MoveBackwardCommand;
 use MarsRover\Position;
 use MarsRover\Rover;
+use PHPUnit\Framework\TestCase;
 
-class RoverTest extends \PHPUnit_Framework_TestCase
+class RoverTest extends TestCase
 {
     public function testRoverHasStartingPoint()
     {
@@ -27,7 +28,7 @@ class RoverTest extends \PHPUnit_Framework_TestCase
         $rover = new Rover($position, $direction);
 
         $commandStack = new CommandStack();
-        $commandStack->add(new MoveForwardCommand($position, $direction));
+        $commandStack->add(new MoveForwardCommand($rover));
 
         $rover->executeNextCommand($commandStack);
         $roverCoordinates = $rover->coordinates();
@@ -42,7 +43,7 @@ class RoverTest extends \PHPUnit_Framework_TestCase
         $rover = new Rover($position, $direction);
 
         $commandStack = new CommandStack();
-        $commandStack->add(new MoveForwardCommand($position, $direction));
+        $commandStack->add(new MoveForwardCommand($rover));
 
         $rover->executeNextCommand($commandStack);
         $roverCoordinates = $rover->coordinates();
@@ -57,7 +58,7 @@ class RoverTest extends \PHPUnit_Framework_TestCase
         $rover = new Rover($position, $direction);
 
         $commandStack = new CommandStack();
-        $commandStack->add(new MoveForwardCommand($position, $direction));
+        $commandStack->add(new MoveForwardCommand($rover));
 
         $rover->executeNextCommand($commandStack);
         $roverCoordinates = $rover->coordinates();
@@ -72,7 +73,7 @@ class RoverTest extends \PHPUnit_Framework_TestCase
         $rover = new Rover($position, $direction);
 
         $commandStack = new CommandStack();
-        $commandStack->add(new MoveForwardCommand($position, $direction));
+        $commandStack->add(new MoveForwardCommand($rover));
 
         $rover->executeNextCommand($commandStack);
         $roverCoordinates = $rover->coordinates();
@@ -87,7 +88,7 @@ class RoverTest extends \PHPUnit_Framework_TestCase
         $rover = new Rover($position, $direction);
 
         $commandStack = new CommandStack();
-        $commandStack->add(new MoveBackwardCommand($position, $direction));
+        $commandStack->add(new MoveBackwardCommand($rover));
 
         $rover->executeNextCommand($commandStack);
         $roverCoordinates = $rover->coordinates();

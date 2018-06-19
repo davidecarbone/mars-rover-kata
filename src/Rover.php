@@ -39,6 +39,14 @@ class Rover
     }
 
     /**
+     * @return string
+     */
+    public function direction()
+    {
+        return $this->direction;
+    }
+
+    /**
      * @param CommandStack $commandStack
      */
     public function executeNextCommand(CommandStack $commandStack)
